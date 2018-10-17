@@ -18,7 +18,7 @@ def generate_permutations(N:int, M:int=-1, prefix=None):
 	M = N if M == -1 else M # по умолчанию N чисел в N позициях
 	prefix = prefix or [0]
 	if M == 0:
-		print(prefix)
+		print(*prefix)
 		return
 	for number in range(1, N+1):
 		if find(number, prefix):
@@ -27,4 +27,4 @@ def generate_permutations(N:int, M:int=-1, prefix=None):
 		generate_permutations(N, M-1, prefix)
 		prefix.pop()
 
-generate_permutations(3)
+generate_permutations(5)
