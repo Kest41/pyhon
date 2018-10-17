@@ -16,13 +16,15 @@ def generate_permutations(N:int, M:int=-1, prefix=None):
 		с префиксом prefix
 	"""
 	M = N if M == -1 else M # по умолчанию N чисел в N позициях
-	preix = prefix or [0]
+	prefix = prefix or [0]
 	if M == 0:
 		print(prefix)
 		return
 	for number in range(1, N+1):
-		if find(number, prefix): prefix:
+		if find(number, prefix):
 			continue
 		prefix.append(number)
 		generate_permutations(N, M-1, prefix)
 		prefix.pop()
+
+generate_permutations(3)
